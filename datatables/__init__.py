@@ -438,7 +438,7 @@ class DataTables:
                     else:
                         tablename = parent.__table__.name
 
-            sort_name = '%s.%s' % (tablename, sort_name)
+            sort_name = '%s.%s' % ('"'+tablename+'"', sort_name)
 
             ordering = asc(text(sort_name)) if sort.dir == 'asc' else desc(
                 text(sort_name))
